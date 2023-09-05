@@ -1,0 +1,77 @@
+<ion-menu contentId="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title style="color:#F7DD72;">Menu </ion-title>  <!-- Menu izquierda -->
+      </ion-toolbar>
+    </ion-header>
+    <!-- Contenidos menu -->
+    <ion-content class="ion-padding">
+      <div class="vertical-container">
+        <button class="boton-seleccion2" style="color:#F7DD72;" routerLink="/alert">
+          Alert
+        </button>
+        
+        <button  class="boton-seleccion2" style="color:#F7DD72;" routerLink="/inicio">
+          inicio
+        </button>
+        <button (click)="irARegistro()" class="boton-seleccion2">
+          Registro
+        </button>
+      </div>
+      
+  
+    </ion-content>
+  </ion-menu>
+  <!--Titulo-->
+  <div class="ion-page" id="main-content">
+    <header class="headercolor">
+      <ion-toolbar>
+        <div class="row">
+          
+          <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+          </ion-buttons>
+          <img class="tllpp" src="assets/TeLlevoAPP.png" />
+          <div class="userwelcome">
+            <ion-title text="right" class="texto2">
+              <p style="color:#F7DD72;">Bienvenido! [UserType]</p>
+            </ion-title>
+          </div>
+        </div>
+      </ion-toolbar>
+    </header>
+    <!-- Contenido -->
+    <ion-content class="ion-padding" scrollEvents="true">
+    
+      <div class="ion-text-center" style="margin-bottom: -15%;">
+        <h3 class="texto2" style="color:#F7DD72;">Buscador de recorrido</h3>
+      </div>
+      
+        <div class="center-content2">
+          <img src="https://streetsmn.s3.us-east-2.amazonaws.com/wp-content/uploads/2013/10/Screen-shot-2013-10-27-at-10.51.49-PM.png"
+          alt="">
+        </div>
+
+      <div class="ion-text-center"><button class="boton-seleccion"shape="round" expand="block" (click)="setOpen(true)">Selecione Pasajero</button></div>
+      
+  <!-- Modal -->
+      <ion-modal [isOpen]="isModalOpen">
+    <ng-template>
+      <header>
+        <ion-toolbar>
+          <ion-title class="texto2" style="color:#F7DD72;">Notificacion</ion-title>
+          <ion-buttons slot="end">
+            <ion-button class="texto2" style="color:#F7DD72;" (click)="setOpen(false)">Cerrar</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </header>
+      <ion-content class="ion-padding">
+        <p class="texto2" style="color:#F7DD72;">No hay pasajeros</p>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+  <app-programar-viaje></app-programar-viaje>
+  
+  
+    
+    </ion-content>
